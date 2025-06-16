@@ -214,13 +214,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: simpanData,
                     style: ElevatedButton.styleFrom(
                       minimumSize: const Size(double.infinity, 45),
-                      backgroundColor: Colors.amber,
-                      foregroundColor: Colors.black,
+                      backgroundColor: Colors.deepPurpleAccent,
+                      foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
                     ),
-                    child: const Text('Simpan Data'),
+                    child: const Text(
+                      'Simpan Data',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
                   ),
                   const Divider(height: 38),
                 ],
@@ -229,9 +235,9 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               children: [
                 FloatingActionButton(
-                  backgroundColor: Colors.amber,
+                  backgroundColor: Colors.deepPurpleAccent,
                   heroTag: 'list_anggota', // Added heroTag to avoid conflict
-                  child: const Icon(Icons.list),
+                  child: const Icon(Icons.list, color: Colors.white),
                   onPressed: () async {
                     List<StudentModel> daftarTerbaru =
                         await DBHelper.getAllAnggota();
@@ -252,9 +258,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(width: 16),
                 FloatingActionButton(
-                  backgroundColor: Colors.amber,
+                  backgroundColor: Colors.deepPurpleAccent,
                   heroTag: 'profile_account', // Added heroTag
-                  child: const Icon(Icons.person),
+                  child: const Icon(Icons.person, color: Colors.white),
                   onPressed: () async {
                     if (mounted) {
                       Navigator.push(
@@ -269,9 +275,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(width: 16),
                 FloatingActionButton(
-                  backgroundColor: Colors.amber,
+                  backgroundColor: Colors.deepPurpleAccent,
                   heroTag: 'list_maba', // Added heroTag
-                  child: const Icon(Icons.people),
+                  child: const Icon(Icons.people, color: Colors.white),
                   onPressed: () async {
                     if (mounted) {
                       Navigator.push(
@@ -284,9 +290,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(width: 16),
                 FloatingActionButton(
-                  backgroundColor: Colors.amber,
-                  heroTag: 'tentang_polimedia', // Added heroTag
-                  child: const Icon(Icons.info),
+                  backgroundColor: Colors.deepPurpleAccent,
+                  heroTag: 'tentang_polimedia',
+                  child: const Icon(Icons.school, color: Colors.white),
                   onPressed: () async {
                     if (mounted) {
                       Navigator.push(
@@ -299,10 +305,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const SizedBox(width: 16),
                 FloatingActionButton(
-                  backgroundColor: Colors.amber,
+                  backgroundColor: Colors.deepPurpleAccent,
                   heroTag: 'kesma_polimed', // Added heroTag
                   child: const Icon(
                     Icons.info,
+                    color: Colors.white,
                   ), // Consider a different icon if this is a different "info"
                   onPressed: () async {
                     if (mounted) {

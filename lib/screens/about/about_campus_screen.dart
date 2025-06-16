@@ -7,18 +7,23 @@ class AboutCampusScreen extends StatelessWidget {
     {
       'image': AppImage.polmed1,
       'title': 'Kampus Utama Jakarta',
+      'subtitle': 'Tempat produksi konten audio visual dan animasi interaktif.',
     }, // <--- Changed here
     {
       'image': AppImage.polmed3,
       'title': 'Laboratorium Desain',
+      'subtitle': 'Pusat kegiatan akademik dan administrasi utama Polimedia.',
     }, // <--- Changed here
     {
       'image': AppImage.polmed4,
       'title': 'Studio Multimedia',
+      'subtitle':
+          'Fasilitas praktik untuk eksplorasi desain grafis dan visual.',
     }, // <--- Changed here
     {
       'image': AppImage.polmed4,
       'title': 'Kegiatan Mahasiswa',
+      'subtitle': 'Beragam aktivitas organisasi dan pengembangan minat bakat',
     }, // <--- Changed here (consider a unique image if available)
   ];
 
@@ -60,10 +65,21 @@ class AboutCampusScreen extends StatelessWidget {
             textAlign: TextAlign.justify,
           ),
           const SizedBox(height: 24),
-          const Text(
-            'Galeri Polimedia',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          Container(
+            color: Colors.deepPurpleAccent,
+            padding: EdgeInsets.all(8),
+            child: Center(
+              child: const Text(
+                'Galeri Polimedia',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ),
+
           const SizedBox(height: 12),
           SizedBox(
             height: 220,
@@ -76,13 +92,13 @@ class AboutCampusScreen extends StatelessWidget {
                 return Container(
                   width: 160,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.deepPurple,
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: const [
                       BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 6,
-                        offset: Offset(0, 4),
+                        color: Colors.black,
+                        blurRadius: 10,
+                        offset: Offset(6, 6),
                       ),
                     ],
                   ),
@@ -106,11 +122,44 @@ class AboutCampusScreen extends StatelessWidget {
                           horizontal: 8,
                           vertical: 10,
                         ),
-                        child: Text(
-                          card['title']!,
-                          style: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 14,
+                        child: Center(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                card['title']!,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 14,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                card['subtitle']!,
+                                /////atasi overflow
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              ///////sel
+                              GestureDetector(
+                                onTap: () {
+                                  // buka halaman/detail lain
+                                },
+                                child: const Text(
+                                  ' Selengkapnya',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.blueAccent,
+                                    decoration: TextDecoration.underline,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ),

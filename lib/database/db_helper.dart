@@ -1,8 +1,8 @@
 import 'package:daftar_siswa_app/models/student_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:daftar_siswa_app/models/user_model.dart'; // Assuming this imports UserModel
-
+import 'package:daftar_siswa_app/models/user_model.dart';
+   
 class DBHelper {
   static Database? _database;
 
@@ -27,7 +27,7 @@ class DBHelper {
             visimisi TEXT, 
             phone TEXT
           )
-        ''');
+        ''');  
         // Create the 'users' table for login/registration
         await db.execute('''
           CREATE TABLE users(
@@ -45,7 +45,7 @@ class DBHelper {
     );
   }
 
-  // --- User Authentication Methods ---
+  // dipakai untuk proses autentikasi/login user dengan memeriksa email dan password pada db 
 
   static Future<UserModel?> login(String email, String password) async {
     final db = await initDB();

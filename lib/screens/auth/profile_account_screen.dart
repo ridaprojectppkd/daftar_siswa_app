@@ -72,7 +72,7 @@ class _ProfileAccountScreenState extends State<ProfileAccountScreen> {
 
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Successfully logged out!")),
+          const SnackBar(content: Text("Logout Sukses")),
         );
         // Navigate to LoginScreen and remove all previous routes
         Navigator.pushAndRemoveUntil(

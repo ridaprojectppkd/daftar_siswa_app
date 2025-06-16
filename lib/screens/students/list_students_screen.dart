@@ -147,8 +147,7 @@ class _ListStudentsScreenState extends State<ListStudentsScreen> {
           ),
         ),
 
-        // If coming from login with pushReplacement, this back button is unusual.
-        // It pushes a *new* login screen on top. Consider a logout button or removing it.
+        
       ),
       body: RefreshIndicator(
         onRefresh: _refreshList,
@@ -156,7 +155,7 @@ class _ListStudentsScreenState extends State<ListStudentsScreen> {
           itemCount: anggotaList.length,
           itemBuilder: (context, index) {
             final anggota = anggotaList[index];
-            return Card(
+            return Card( 
               child: ListTile(
                 leading: CircleAvatar(
                   backgroundColor: Colors.amber,
