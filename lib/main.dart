@@ -1,5 +1,7 @@
 // lib/main.dart
+import 'package:daftar_siswa_app/tugas_14/models/coin_model.dart';
 import 'package:daftar_siswa_app/tugas_14/view/bitcoin_list_screen.dart'; // Perhatikan perubahan path ini
+import 'package:daftar_siswa_app/tugas_14/view/detail_coin_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,6 +51,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const CryptoMarketsScreen(),
+        '/coinDetail': (context) {
+          final coin = ModalRoute.of(context)!.settings.arguments as CoinModel;
+          return CoinDetailScreen(coin: coin);
+        },
       }, // Pastikan CryptoMarketsScreen sudah const
     );
   }
