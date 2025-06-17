@@ -16,7 +16,7 @@ class Welcome {
   int perPage;
   int total;
   int totalPages;
-  List<Datum> data;
+  List<Users> data;
   Support support;
 
   Welcome({
@@ -33,7 +33,7 @@ class Welcome {
     perPage: json["per_page"],
     total: json["total"],
     totalPages: json["total_pages"],
-    data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
+    data: List<Users>.from(json["data"].map((x) => Users.fromJson(x))),
     support: Support.fromJson(json["support"]),
   );
 
@@ -47,14 +47,14 @@ class Welcome {
   };
 }
 
-class Datum {
+class Users {
   int id;
   String email;
   String firstName;
   String lastName;
   String avatar;
 
-  Datum({
+  Users({
     required this.id,
     required this.email,
     required this.firstName,
@@ -62,7 +62,7 @@ class Datum {
     required this.avatar,
   });
 
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+  factory Users.fromJson(Map<String, dynamic> json) => Users(
     id: json["id"],
     email: json["email"],
     firstName: json["first_name"],
