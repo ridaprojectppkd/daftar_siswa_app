@@ -5,14 +5,14 @@ import 'package:daftar_siswa_app/routes/app_routes.dart'; // Make sure this path
 import 'package:daftar_siswa_app/constant/app_image.dart'; // For your logo on splash
 import 'dart:async'; // Required for Timer
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SplashScreenBitcoin extends StatefulWidget {
+  const SplashScreenBitcoin({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashScreenBitcoin> createState() => _SplashScreenBitcoinState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenBitcoinState extends State<SplashScreenBitcoin> {
   @override
   void initState() {
     super.initState();
@@ -49,26 +49,34 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Or your app's primary color
+      backgroundColor: const Color.fromARGB(
+        255,
+        35,
+        27,
+        148,
+      ), // Or your app's primary color
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              AppImage.logo, // Use your constant logo path
+              AppImage.bitcoin, // Use your constant logo path
               height: 150,
               width: 150,
             ),
             const SizedBox(height: 20),
             const CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(
-                Color.fromARGB(255, 31, 2, 85),
+                Color.fromARGB(255, 255, 255, 255),
               ), // Adjust color
             ),
             const SizedBox(height: 10),
             const Text(
               'Loading...',
-              style: TextStyle(fontSize: 18, color: Colors.black54),
+              style: TextStyle(
+                fontSize: 18,
+                color: Color.fromARGB(137, 255, 255, 255),
+              ),
             ),
           ],
         ),

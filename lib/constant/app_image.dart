@@ -7,4 +7,8 @@ class AppImage {
   static const tae = "assets/images/tae.jpg";
   static const jimin = "assets/images/jimin.jpg";
   static const bg = "assets/images/background2.png";
+  static const bitcoin = "assets/images/crypto.png";
+  static const elon = "assets/images/elon.jpg";
+  static const times = "assets/images/times.jpg";
+  static const timoti = "assets/images/timoti.jpg";
 }
