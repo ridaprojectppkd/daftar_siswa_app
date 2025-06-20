@@ -1,8 +1,8 @@
 import 'package:daftar_siswa_app/constant/app_image.dart';
 import 'package:daftar_siswa_app/constant/app_color.dart';
-import 'package:daftar_siswa_app/database/db_helper.dart'; // Make sure this path is correct
+import 'package:daftar_siswa_app/tugas_13/database/db_helper.dart'; // Make sure this path is correct
 import 'package:daftar_siswa_app/routes/app_routes.dart';
-import 'package:daftar_siswa_app/screens/auth/register_screen.dart';
+import 'package:daftar_siswa_app/tugas_13/screens/auth/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart'; // Import sqflite for specific exception handling

@@ -1,7 +1,7 @@
 import 'package:daftar_siswa_app/constant/app_color.dart';
 import 'package:daftar_siswa_app/constant/app_image.dart';
-import 'package:daftar_siswa_app/database/db_helper.dart';
-import 'package:daftar_siswa_app/models/user_model.dart';
+import 'package:daftar_siswa_app/tugas_13/database/db_helper.dart';
+import 'package:daftar_siswa_app/tugas_13/models/user_model.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {

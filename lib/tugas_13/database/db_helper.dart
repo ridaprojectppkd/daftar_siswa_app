@@ -1,7 +1,7 @@
-import 'package:daftar_siswa_app/models/student_model.dart';
+import 'package:daftar_siswa_app/tugas_13/models/student_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:daftar_siswa_app/models/user_model.dart';
+import 'package:daftar_siswa_app/tugas_13/models/user_model.dart';
    
 class DBHelper {
   static Database? _database;

@@ -1,12 +1,12 @@
-import 'package:daftar_siswa_app/screens/alumni/list_alumni_screen.dart';
+import 'package:daftar_siswa_app/tugas_13/screens/alumni/list_alumni_screen.dart';
 import 'package:daftar_siswa_app/constant/app_image.dart';
-import 'package:daftar_siswa_app/models/student_model.dart';
-import 'package:daftar_siswa_app/screens/about/about_campus_screen.dart';
-import 'package:daftar_siswa_app/screens/about/about_rector_screen.dart';
+import 'package:daftar_siswa_app/tugas_13/models/student_model.dart';
+import 'package:daftar_siswa_app/tugas_13/screens/about/about_campus_screen.dart';
+import 'package:daftar_siswa_app/tugas_13/screens/about/about_rector_screen.dart';
 // Assuming this is your actual DaftarScreen StatefulWidget
-import 'package:daftar_siswa_app/screens/students/list_students_screen.dart'; // <--- Check this import and the class name
-import 'package:daftar_siswa_app/database/db_helper.dart'; // Make sure this is DBHelper, not db_helper_screen
-import 'package:daftar_siswa_app/screens/auth/profile_account_screen.dart';
+import 'package:daftar_siswa_app/tugas_13/screens/students/list_students_screen.dart'; // <--- Check this import and the class name
+import 'package:daftar_siswa_app/tugas_13/database/db_helper.dart'; // Make sure this is DBHelper, not db_helper_screen
+import 'package:daftar_siswa_app/tugas_13/screens/auth/profile_account_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {

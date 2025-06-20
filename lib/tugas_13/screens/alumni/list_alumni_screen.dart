@@ -1,5 +1,5 @@
 import 'package:daftar_siswa_app/constant/app_image.dart';
-import 'package:daftar_siswa_app/models/alumni_model.dart';
+import 'package:daftar_siswa_app/tugas_13/models/alumni_model.dart';
 import 'package:flutter/material.dart';
 
 /////////////////////////////modell
