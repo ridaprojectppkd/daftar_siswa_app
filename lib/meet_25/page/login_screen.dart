@@ -1,6 +1,7 @@
 import 'package:daftar_siswa_app/meet_25/api/user_api.dart';
-import 'package:daftar_siswa_app/meet_25/home_screen.dart';
-import 'package:daftar_siswa_app/meet_25/register_screen.dart';
+import 'package:daftar_siswa_app/meet_25/page/profile_screen.dart';
+import 'package:daftar_siswa_app/meet_25/page/register_screen.dart';
+import 'package:daftar_siswa_app/meet_25/page/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreenAPI extends StatefulWidget {
@@ -34,10 +35,10 @@ class _LoginPageApiState extends State<LoginScreenAPI> {
           backgroundColor: Colors.green,
         ),
       );
-      // Navigator.push(
-      //   context,
-      //   MaterialPageRoute(builder: (context) => ProfileScreen()),
-      // );
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+      );
     } else if (res["errors"] != null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(

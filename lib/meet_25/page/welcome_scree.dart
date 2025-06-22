@@ -1,5 +1,5 @@
-import 'package:daftar_siswa_app/meet_25/login_screen.dart';
-import 'package:daftar_siswa_app/meet_25/register_screen.dart';
+import 'package:daftar_siswa_app/meet_25/page/login_screen.dart';
+import 'package:daftar_siswa_app/meet_25/page/register_screen.dart';
 import 'package:flutter/material.dart';
 
 
