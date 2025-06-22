@@ -2,7 +2,7 @@ import 'package:daftar_siswa_app/meet_22/models/user_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
-Future<List<Users>> getUsers() async {
+Future<List<Users>> getUser() async {
   final response = await http.get(
     Uri.parse('https://reqres.in/api/users?page=2'),
   );

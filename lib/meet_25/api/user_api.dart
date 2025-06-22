@@ -1,4 +1,4 @@
-import 'dart:convert';
+
 
 import 'package:daftar_siswa_app/meet_25/endpoint.dart';
 import 'package:daftar_siswa_app/meet_25/model/login_succses_response.dart';
@@ -65,42 +65,43 @@ class UserService {
   }
 
   /// Profile API
-  // Future<User> getUser() async {
-  //   // Use the hardcoded token for testing
-  //   final String? token = _hardcodedAuthTokenForTesting;
+  Future<UserLogin> getUsers() async {
+    // Use the hardcoded token for testing
+    final String? token = _hardcodedAuthTokenForTesting;
 
-  //   if (token == null) {
-  //     throw Exception('No authentication token found. Did you log in first or set it for testing?');
-  //   }
+    if (token == null) {
+      throw Exception('No authentication token found. Did you log in first or set it for testing?');
+    }
 
-  //   final url = Uri.parse(Endpoint.profile);
-  //   final response = await http.get(
-  //     url,
-  //     headers: {
-  //       "Accept": "application/json",
-  //       "Authorization": "Bearer $token", // Use the temporary token
-  //     },
-  //   );
+    final url = Uri.parse(Endpoint.profile);
+    final response = await http.get(
+      url,
+      headers: {
+        "Accept": "application/json",
+        "Authorization": "Bearer $token", // Use the temporary token
+      },
+    );
 
-  //   if (response.statusCode == 200) {
-  //     final loginResponse = loginSuccsesResponseFromJson(response.body);
-  //     return loginResponse.data.user;
-  //   } else {
-  //     throw Exception(response.body);
-  //   }
+    if (response.statusCode == 200) {
+      final loginResponse = loginSuccsesResponseFromJson(response.body);
+      return loginResponse.data.user;
+    } else {
+      throw Exception(response.body);
+    }
+  }
+
+  Future<void> logout() async {
+    // ... API call to logout on server if needed ...
+    _hardcodedAuthTokenForTesting = null; // Clear the token on logout for testing
+    print("User logged out and temporary token cleared.");
+    await Future.delayed(Duration(seconds: 0)); // Simulate async
+  }
+
+  Future<void> deleteAccount() async {
+    // ... API call to delete on server if needed ...
+    _hardcodedAuthTokenForTesting = null; // Clear the token on delete for testing
+    print("Account deleted and temporary token cleared.");
+    await Future.delayed(Duration(seconds: 0)); // Simulate async
   // }
-
-  // Future<void> logout() async {
-  //   // ... API call to logout on server if needed ...
-  //   _hardcodedAuthTokenForTesting = null; // Clear the token on logout for testing
-  //   print("User logged out and temporary token cleared.");
-  //   await Future.delayed(Duration(seconds: 0)); // Simulate async
-  // }
-
-  // Future<void> deleteAccount() async {
-  //   // ... API call to delete on server if needed ...
-  //   _hardcodedAuthTokenForTesting = null; // Clear the token on delete for testing
-  //   print("Account deleted and temporary token cleared.");
-  //   await Future.delayed(Duration(seconds: 0)); // Simulate async
-  // }
+}
 }
