@@ -1,7 +1,6 @@
 import 'package:daftar_siswa_app/meet_25/api/user_api.dart';
-import 'package:daftar_siswa_app/meet_25/page/profile_screen.dart';
+import 'package:daftar_siswa_app/meet_25/page/profile_page.dart';
 import 'package:daftar_siswa_app/meet_25/page/register_screen.dart';
-import 'package:daftar_siswa_app/meet_25/page/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreenAPI extends StatefulWidget {
@@ -37,7 +36,7 @@ class _LoginPageApiState extends State<LoginScreenAPI> {
       );
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen()),
+        MaterialPageRoute(builder: (context) => ProfilePage()),
       );
     } else if (res["errors"] != null) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -75,7 +74,11 @@ class _LoginPageApiState extends State<LoginScreenAPI> {
             children: [
               const Text(
                 "Welcome Back",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xff096B68),
+                ),
               ),
               height(12),
               const Text(
@@ -112,7 +115,7 @@ class _LoginPageApiState extends State<LoginScreenAPI> {
                     "Forgot Password?",
                     style: TextStyle(
                       fontSize: 12,
-                      color: Colors.orange,
+                      color: Color.fromARGB(255, 0, 0, 0),
                       fontWeight: FontWeight.w500,
                     ),
                   ),
