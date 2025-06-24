@@ -1,14 +1,16 @@
 import 'dart:convert';
 
-import 'package:daftar_siswa_app/meet_25/api/shared_preferences.dart';
-import 'package:daftar_siswa_app/meet_25/model/login_error_response.dart';
-import 'package:daftar_siswa_app/meet_25/model/login_succses_response.dart';
-import 'package:daftar_siswa_app/meet_25/model/profile_response.dart';
+import 'package:daftar_siswa_app/tugas_15/api/shared_preferences.dart';
+import 'package:daftar_siswa_app/tugas_15/model/login_error_response.dart';
+import 'package:daftar_siswa_app/tugas_15/model/login_succses_response.dart';
+import 'package:daftar_siswa_app/tugas_15/model/profile_response.dart';
 import 'package:http/http.dart' as http;
 
 import '../endpoint.dart';
 import '../model/register_error_response.dart';
 import '../model/register_response.dart';
+
+////////////////////////////////////////REGISTER/////////////////////////////////////////
 
 class UserService {
   Future<Map<String, dynamic>> registerUser({
@@ -33,7 +35,7 @@ class UserService {
       throw Exception("Failed to register user: ${response.statusCode}");
     }
   }
-
+//////////////////////////////////////////////////LOGIN//////////////////////////////////
   // In your UserService.loginUser, after saving the token
   Future<Map<String, dynamic>> loginUser({
     required String email,
@@ -69,7 +71,7 @@ class UserService {
     }
   }
 
-  /// Profile API
+/////////////////////////////////////PROFILE///////////////////////////
   Future<DataProfile> getUsers() async {
     // <--- CHANGE RETURN TYPE FROM UserLogin TO Data
     final token = await SharedPrefsUtil.getUserToken();
@@ -103,7 +105,7 @@ class UserService {
       throw Exception(response.body);
     }
   }
-
+////////////////////Update Profile//////////////////////////////////////////////////////////////////////////////////////
   Future<DataProfile> updateProfile({required String name}) async {
    
     final url = Uri.parse(Endpoint.profile);
@@ -145,7 +147,7 @@ class UserService {
       throw Exception(response.body);
     }
   }
-
+//////////////////////////////DELETE LOGOUT/////////////////////////////////////
   Future<void> logout() async {
     // ... API call to logout on server if needed ...
     await SharedPrefsUtil.removeAuthToken();

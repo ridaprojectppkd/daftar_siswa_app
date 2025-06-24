@@ -9,6 +9,7 @@ class AppStyle {
   static TextStyle fontRegular({double? fontSize}) {
     return TextStyle(fontSize: fontSize ?? 16);
   }
+
   static const TextStyle heading1 = TextStyle(
     fontSize: 32,
     fontWeight: FontWeight.bold,
@@ -18,7 +19,7 @@ class AppStyle {
   static const TextStyle heading2 = TextStyle(
     fontSize: 28,
     fontWeight: FontWeight.bold,
-    color: AppColor.primaryBlack,
+    color: AppColor.ungubase,
   );
 
   static const TextStyle subHeading = TextStyle(
@@ -28,7 +29,7 @@ class AppStyle {
 
   static const TextStyle bodyText = TextStyle(
     fontSize: 14,
-    color: AppColor.primaryBlack,
+    color: Color.fromARGB(255, 0, 0, 0),
   );
 
   static const TextStyle buttonText = TextStyle(
@@ -39,6 +40,11 @@ class AppStyle {
   static const TextStyle inputLabel = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
-    color: AppColor.primaryBlack,
+    color: AppColor.ungubase,
+  );
+  static const TextStyle inputinformation = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    color: Color.fromARGB(255, 255, 255, 255),
   );
 }

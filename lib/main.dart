@@ -1,6 +1,6 @@
 // lib/main.dart
-import 'package:daftar_siswa_app/meet_25/page/login_screen.dart';
-import 'package:daftar_siswa_app/meet_25/page/register_screen.dart';
+import 'package:daftar_siswa_app/tugas_15/page/login_screen.dart';
+import 'package:daftar_siswa_app/tugas_15/page/register_screen.dart';
 import 'package:daftar_siswa_app/tugas_14/models/coin_model.dart';
 import 'package:daftar_siswa_app/tugas_14/view/detail_coin_screen.dart';
 import 'package:flutter/material.dart';

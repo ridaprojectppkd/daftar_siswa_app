@@ -9,6 +9,10 @@ class AppColor {
   static const Color army2 = Color(0xffD2D0A0);
   static const Color army3 = Color(0xff9EBC8A);
   static const Color green2hunt = Color(0xff129990);
+  static const Color biru1 = Color(0xff98E4FF);
+  static const Color biru2 = Color(0xff80B3FF);
+   static const Color birubase = Color(0xffB6FFFA);
+   static const Color ungubase = Color(0xff687EFF);
 
   // API Auth
   static const Color primaryBlack = Color(

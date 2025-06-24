@@ -1,6 +1,6 @@
-import 'package:daftar_siswa_app/meet_25/api/user_api.dart';
-import 'package:daftar_siswa_app/meet_25/page/profile_page.dart';
-import 'package:daftar_siswa_app/meet_25/page/register_screen.dart';
+import 'package:daftar_siswa_app/tugas_15/api/user_api.dart';
+import 'package:daftar_siswa_app/tugas_15/page/profile_page.dart';
+import 'package:daftar_siswa_app/tugas_15/page/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreenAPI extends StatefulWidget {
@@ -75,9 +75,9 @@ class _LoginPageApiState extends State<LoginScreenAPI> {
               const Text(
                 "Welcome Back",
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff096B68),
+                  color: Color(0xff0118D8),
                 ),
               ),
               height(12),

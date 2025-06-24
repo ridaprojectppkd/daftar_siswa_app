@@ -2,12 +2,11 @@ import 'dart:convert';
 
 import 'package:daftar_siswa_app/constant/app_color.dart';
 import 'package:daftar_siswa_app/constant/app_style.dart';
-import 'package:daftar_siswa_app/meet_25/api/user_api.dart';
-import 'package:daftar_siswa_app/meet_25/model/login_error_response.dart';
-import 'package:daftar_siswa_app/meet_25/model/profile_response.dart';
-import 'package:daftar_siswa_app/meet_25/page/custom_button.dart';
-import 'package:daftar_siswa_app/meet_25/page/login_screen.dart';
-import 'package:daftar_siswa_app/tugas_13/screens/auth/login_screen.dart';
+import 'package:daftar_siswa_app/tugas_15/api/user_api.dart';
+import 'package:daftar_siswa_app/tugas_15/model/login_error_response.dart';
+import 'package:daftar_siswa_app/tugas_15/model/profile_response.dart';
+import 'package:daftar_siswa_app/tugas_15/page/custom_button.dart';
+import 'package:daftar_siswa_app/tugas_15/page/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -109,7 +108,7 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
-  // ///////////////////////////////////Update Profile
+  // ///////////////////////////////////Update Profile//////////////////////////////////////////
   Future<void> _updateProfile() async {
     setState(() {
       _isLoading = true;
@@ -233,18 +232,31 @@ class _ProfilePageState extends State<ProfilePage> {
       }
     }
   }
+  ///////////////////////////////////////Ui/////////////////
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text('Profil Pengguna'),
-        backgroundColor: Colors.blueAccent,
+        title: Center(
+          child: const Text(
+            'Profil Pengguna',
+            style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255),
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        backgroundColor: AppColor.ungubase,
         actions: [
           if (!_isEditingProfile && _currentUser != null)
             IconButton(
-              icon: const Icon(Icons.edit),
+              icon: const Icon(
+                Icons.edit,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
               onPressed: () {
                 setState(() {
                   _isEditingProfile = true;
@@ -256,7 +268,10 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
           if (_isEditingProfile)
             IconButton(
-              icon: const Icon(Icons.cancel),
+              icon: const Icon(
+                Icons.cancel,
+                color: Color.fromARGB(255, 255, 255, 255),
+              ),
               onPressed: () {
                 setState(() {
                   _isEditingProfile = false;
@@ -283,7 +298,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       CustomButton(
                         text: 'Retry',
                         onPressed: _getProfile,
-                        backgroundColor: AppColor.army1,
+                        backgroundColor: AppColor.biru1,
                         textColor: Colors.white,
                       ),
                     ],
@@ -294,18 +309,23 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Your Information', style: AppStyle.heading2),
+                      Center(
+                        child: Text(
+                          'Your Information',
+                          style: AppStyle.heading2,
+                        ),
+                      ),
                       const SizedBox(height: 24),
                       if (!_isEditingProfile) ...[
                         _buildProfileInfoRow(
                           label: 'Name',
                           value: _currentUser!.name,
-                          color: Color(0xff129990),
+                          color: AppColor.biru2,
                         ),
                         _buildProfileInfoRow(
                           label: 'Email',
                           value: _currentUser!.email,
-                          color: Color(0xff129990),
+                          color: AppColor.biru2,
                         ),
                         const SizedBox(height: 48),
                       ] else ...[
@@ -321,7 +341,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
-                            fillColor: const Color.fromARGB(255, 255, 164, 164),
+                            fillColor: AppColor.biru2,
                             contentPadding: const EdgeInsets.symmetric(
                               horizontal: 16,
                               vertical: 14,
@@ -344,7 +364,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               borderSide: BorderSide.none,
                             ),
                             filled: true,
-                            fillColor: const Color.fromARGB(255, 255, 6, 6),
+                            fillColor: AppColor.biru2,
                             contentPadding: const EdgeInsets.symmetric(
                               horizontal: 16,
                               vertical: 14,
@@ -356,7 +376,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         CustomButton(
                           text: 'Save Changes',
                           onPressed: _updateProfile,
-                          backgroundColor: AppColor.primaryBlack,
+                          backgroundColor: AppColor.ungubase,
                           textColor: Colors.white,
                         ),
                         const SizedBox(
@@ -367,7 +387,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       CustomButton(
                         text: 'Logout',
                         onPressed: _logout,
-                        backgroundColor: Color(0xff096B68),
+                        backgroundColor: Colors.red,
                         textColor: const Color.fromARGB(255, 255, 255, 255),
                       ),
                     ],
@@ -387,7 +407,7 @@ class _ProfilePageState extends State<ProfilePage> {
       margin: EdgeInsets.only(bottom: 10), //////////SPASI
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
-        color: color,
+        color: AppColor.biru2,
       ),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -397,15 +417,15 @@ class _ProfilePageState extends State<ProfilePage> {
             Text(
               label,
               style: AppStyle.inputLabel.copyWith(
-                color: Color.fromARGB(255, 255, 255, 255),
+                color: const Color.fromARGB(255, 255, 255, 255),
               ),
             ),
             const SizedBox(height: 4),
-            Text(value, style: AppStyle.bodyText.copyWith(fontSize: 16)),
-            const Divider(
-              color: Color.fromARGB(255, 219, 92, 92),
-              thickness: 1,
+            Text(
+              value,
+              style: AppStyle.inputinformation.copyWith(fontSize: 16),
             ),
+            const Divider(color: AppColor.birubase, thickness: 1),
           ],
         ),
       ),
