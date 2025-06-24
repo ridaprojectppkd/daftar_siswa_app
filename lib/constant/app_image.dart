@@ -11,4 +11,7 @@ class AppImage {
   static const elon = "assets/images/elon.jpg";
   static const times = "assets/images/times.jpg";
   static const timoti = "assets/images/timoti.jpg";
+  static const laundry = "assets/images/Laundry.jpg";
+  static const logolaundrywhite = "assets/images/2.png";
+  static const logolaundryblue = "assets/images/1.png";
 }

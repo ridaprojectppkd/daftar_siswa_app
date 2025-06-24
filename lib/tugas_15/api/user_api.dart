@@ -49,13 +49,11 @@ class UserService {
     if (response.statusCode == 200) {
       final loginSuccessResponse = loginSuccsesResponseFromJson(response.body);
       // Store the token from the successful login response
-      if (loginSuccessResponse.data.token != null) {
-        await SharedPrefsUtil.saveUserToken(loginSuccessResponse.data.token!);
-        print(
-          "Token saved to SharedPreferences: ${loginSuccessResponse.data.token}",
-        ); // ADD THIS PRINT STATEMENT HERE!
-      }
-      return loginSuccessResponse
+      await SharedPrefsUtil.saveUserToken(loginSuccessResponse.data.token!);
+      print(
+        "Token saved to SharedPreferences: ${loginSuccessResponse.data.token}",
+      ); // ADD THIS PRINT STATEMENT HERE!
+          return loginSuccessResponse
           .toJson(); // Changed to return the success response
     } else if (response.statusCode == 401) {
       return loginErrorResponseFromJson(

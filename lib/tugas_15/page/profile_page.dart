@@ -22,8 +22,8 @@ class _ProfilePageState extends State<ProfilePage> {
   bool _isEditingProfile = false;
 
   DataProfile? _currentUser;
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
 
   Map<String, String?> _profileErrors = {'name': null, 'email': null};
 
@@ -69,9 +69,8 @@ class _ProfilePageState extends State<ProfilePage> {
               exceptionMessage.endsWith('}')) {
             final Map<String, dynamic> errorJson = jsonDecode(exceptionMessage);
             final loginErrorResponse = LoginErrorResponse.fromJson(errorJson);
-            if (loginErrorResponse.message != null &&
-                loginErrorResponse.message!.isNotEmpty) {
-              errorMessage = loginErrorResponse.message!;
+            if (loginErrorResponse.message.isNotEmpty) {
+              errorMessage = loginErrorResponse.message;
             } else {
               errorMessage = 'An API error occurred with no specific message.';
             }

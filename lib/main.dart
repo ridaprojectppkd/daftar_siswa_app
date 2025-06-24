@@ -1,8 +1,8 @@
 // lib/main.dart
-import 'package:daftar_siswa_app/tugas_15/page/login_screen.dart';
-import 'package:daftar_siswa_app/tugas_15/page/register_screen.dart';
-import 'package:daftar_siswa_app/tugas_14/models/coin_model.dart';
-import 'package:daftar_siswa_app/tugas_14/view/detail_coin_screen.dart';
+
+import 'package:daftar_siswa_app/tugas_16/screen/login_screen.dart';
+
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -51,13 +51,9 @@ class MyApp extends StatelessWidget {
       // },
       initialRoute: '/',
       routes: {
-        '/': (context) => const LoginScreenAPI(),
-        '/nav': (context) => const LoginScreenAPI(),
-        '/home': (context) => const RegisterScreenAPI(),
-        '/coinDetail': (context) {
-          final coin = ModalRoute.of(context)!.settings.arguments as CoinModel;
-          return CoinDetailScreen(coin: coin);
-        },
+        '/': (context) => LoginScreenLaundry(),
+        // '/nav': (context) => RegisterScreen ,
+        
       }, // Pastikan CryptoMarketsScreen sudah const
     );
   }
